@@ -1,0 +1,18 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>Users</ion-title>
+        <ion-buttons end>
+            <ion-spinner color="light" *ngIf="!(contacts)"></ion-spinner>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+      <span *ngFor="let user of contacts">
+        <a ion-item (click)="openChat(user.key)" *ngIf="user.key !== uid">
+             <h2>{{user.email}}</h2>
+        </a>
+      </span>
+    </ion-list>
+</ion-content>
